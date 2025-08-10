@@ -57,7 +57,7 @@ export default function App() {
                   alt={`Cat ${i + 1}`}
                   loading={i < 3 ? 'eager' : 'lazy'}
                   draggable={false}
-                  style={{ width: '100%', height: '100%', objectFit: fitMode, background: '#000' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', background: '#000' }}
                 />
                 <div className="label">Cat #{i + 1}</div>
               </div>
@@ -67,12 +67,6 @@ export default function App() {
 
 
           <div className="controls">
-            <button
-              className="btn"
-              onClick={() => setFitMode(m => (m === 'contain' ? 'cover' : 'contain'))}
-            >
-              {fitMode === 'contain' ? 'Fill (crop)' : 'Fit (no crop)'}
-            </button>
             <button className="btn btn-skip" onClick={() => swipe('left')}>Dislike</button>
             <button className="btn btn-like" onClick={() => swipe('right')}>Like</button>
           </div>
